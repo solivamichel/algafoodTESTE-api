@@ -61,6 +61,7 @@ public class RestauranteController {
 	public ResponseEntity<?> atualizar(@PathVariable Long restauranteId, @RequestBody Restaurante restaurante) {
 		try {
 			Restaurante restauranteAtual = restauranteRepository.buscar(restauranteId);
+			
 			if( restauranteAtual != null ) {
 				BeanUtils.copyProperties(restaurante, restauranteAtual, "id");
 				
